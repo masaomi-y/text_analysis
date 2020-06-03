@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
+# In[4]:
 
 
 import tweepy
@@ -62,7 +62,7 @@ def gettwitterdata(keyword,dfile,sincedate,untildate):
     #print(untildate+'_00:00:00_JST')
 
     #出力ファイル名
-    fname= r"'"+ dfile + "'"
+    fname = r"'"+ dfile + "'"
     fname = fname.replace("'","")
 
     #ファイル出力
@@ -90,22 +90,21 @@ def gettwitterdata(keyword,dfile,sincedate,untildate):
 
 if __name__ == '__main__':
 
-    ##検索キーワードを入力  ※リツイートを除外する場合 「キーワード -RT 」と入力
-    #print ('====== Enter Serch KeyWord   =====')
-    #keyword = input('>  ')
-    keyword = "paypay -rt"
+    #検索キーワードを入力  ※リツイートを除外する場合 「キーワード -RT 」と入力
+    print ('====== Enter Serch KeyWord   =====')
+    keyword = input('>  ')
 
-    ##"検索する期間（自）
-    #"print ('====== 検索する期間（自）「yyyy-mm-dd」 =====')
-    sincedate = (datetime.date.today() + datetime.timedelta(days=-0)).strftime('%Y-%m-%d')
+    #出力ファイル名を入力(相対パス or 絶対パス)
+    print ('====== Enter Tweet Data file =====')
+    dfile = input('>  ')
 
-    ##検索する期間（至）
-    #print ('====== 検索する期間（至）「yyyy-mm-dd」 =====')
-    untildate = (datetime.date.today() + datetime.timedelta(days=-0)).strftime('%Y-%m-%d')
-    
-    ##出力ファイル名を入力(相対パス or 絶対パス)
-    #print ('====== Enter Tweet Data file =====')
-    dfile = r"C:\twitter\text_analysis\tweet_data\paypay_"+ sincedate +".csv"
+    #検索する期間（自）
+    print ('====== 検索する期間（自）「yyyy-mm-dd」 =====')
+    sincedate = input('>  ')
+
+    #検索する期間（至）
+    print ('====== 検索する期間（至）「yyyy-mm-dd」 =====')
+    untildate = input('>  ')
 
     gettwitterdata(keyword,dfile,sincedate,untildate)
 
