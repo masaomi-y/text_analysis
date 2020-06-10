@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
+# In[7]:
 
 
 import tweepy
@@ -97,11 +97,11 @@ if __name__ == '__main__':
 
     ##"検索する期間（自）
     #"print ('====== 検索する期間（自）「yyyy-mm-dd」 =====')
-    sincedate = (datetime.date.today() + datetime.timedelta(days=-0)).strftime('%Y-%m-%d')
+    sincedate = (datetime.date.today() + datetime.timedelta(days=-1)).strftime('%Y-%m-%d')
 
     ##検索する期間（至）
     #print ('====== 検索する期間（至）「yyyy-mm-dd」 =====')
-    untildate = (datetime.date.today() + datetime.timedelta(days=-0)).strftime('%Y-%m-%d')
+    untildate = (datetime.date.today() + datetime.timedelta(days=-1)).strftime('%Y-%m-%d')
     
     ##出力ファイル名を入力(相対パス or 絶対パス)
     #print ('====== Enter Tweet Data file =====')
