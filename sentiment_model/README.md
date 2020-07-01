@@ -1,30 +1,29 @@
-# TwitterƒlƒKƒ|ƒW”»’fƒ‚ƒfƒ‹ì¬E“K—p
-‰º‹Lƒ\[ƒX‚ğƒx[ƒX‚Éì¬B
-@https://qiita.com/ysiny/items/b01250228e0c5cc0e647
-@https://github.com/sinjorjob/chABSA-dataset
+# Twitterãƒã‚¬ãƒã‚¸åˆ¤æ–­ãƒ¢ãƒ‡ãƒ«ä½œæˆãƒ»é©ç”¨
+ä¸‹è¨˜ã‚½ãƒ¼ã‚¹ã‚’ãƒ™ãƒ¼ã‚¹ã«ä½œæˆã€‚
+ã€€https://qiita.com/ysiny/items/b01250228e0c5cc0e647
+ã€€https://github.com/sinjorjob/chABSA-dataset
 
-## ƒfƒBƒŒƒNƒgƒŠ\¬
+## ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªæ§‹æˆ
 
-„¥„Ÿdata
-„   „¤„ŸTwitter“ú–{Œê•]”»•ªÍƒf[ƒ^ƒZƒbƒg.txt
-„   „¤„Ÿtest.tsv    				#ƒeƒXƒg—pƒf[ƒ^
-„   „¤„Ÿtrain.tsv   	 			#ŒP—û—pƒf[ƒ^
-„   „¤„Ÿtest_dumy.tsv  				#ƒ_ƒ~[ƒf[ƒ^
-„   „¤„Ÿtrain_dumy.tsv 				#ƒ_ƒ~[ƒf[ƒ^
-
-„¥„Ÿutils
-„   „¤„Ÿbert.py    				#BERTƒ‚ƒfƒ‹‚Ì’è‹`
-„   „¤„Ÿconfig.py  				#ŠeíƒpƒX‚Ì’è‹`
-„   „¤„Ÿdataloader.py    			#dataloader¶¬—p
-„   „¤„Ÿpredict.py    				#„˜_—p
-„   „¤„Ÿpredict.py    				#„˜_—p
-„   „¤„Ÿtokenizer.py   				#Œ`‘Ô‘f‰ğÍ—p
-„   „¤„Ÿtrain.py       				#ŠwK—p 
-„¥„Ÿvocab      					# bertŒê˜^«‘vocab.txt@@@@@@@ c ¦1
-„¤„Ÿweights    					# bert_config.jsonApytorch_model.bin c ¦1
-„¤„ŸTwitterŠwKƒf[ƒ^‚Ìì¬.ipynb   		#tsvƒf[ƒ^ì¬
-„¤„ŸTwitterƒlƒKƒ|ƒWƒ‚ƒfƒ‹ì¬E“K—p.ipynb   	#ƒf[ƒ^ƒ[ƒ_ì¬~ŠwK~„˜_
-
-¦1F‰º‹LHP‚©‚çƒ_ƒEƒ“ƒ[ƒh‚µ‚Ä”z’u
-     https://alaginrc.nict.go.jp/nict-bert/index.html
-     NICT_BERT-base_JapaneseWikipedia_32K_BPE.zip‚ğƒ_ƒEƒ“ƒ[ƒh
+â”œâ”€data  
+â”‚  â””â”€Twitteræ—¥æœ¬èªè©•åˆ¤åˆ†æãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆ.txt  
+â”‚  â””â”€test.tsv    				#ãƒ†ã‚¹ãƒˆç”¨ãƒ‡ãƒ¼ã‚¿  
+â”‚  â””â”€train.tsv   	 			#è¨“ç·´ç”¨ãƒ‡ãƒ¼ã‚¿  
+â”‚  â””â”€test_dumy.tsv  				#ãƒ€ãƒŸãƒ¼ãƒ‡ãƒ¼ã‚¿  
+â”‚  â””â”€train_dumy.tsv 				#ãƒ€ãƒŸãƒ¼ãƒ‡ãƒ¼ã‚¿  
+â”œâ”€utils  
+â”‚  â””â”€bert.py    				#BERTãƒ¢ãƒ‡ãƒ«ã®å®šç¾©  
+â”‚  â””â”€config.py  				#å„ç¨®ãƒ‘ã‚¹ã®å®šç¾©  
+â”‚  â””â”€dataloader.py    			#dataloaderç”Ÿæˆç”¨  
+â”‚  â””â”€predict.py    				#æ¨è«–ç”¨  
+â”‚  â””â”€predict.py    				#æ¨è«–ç”¨  
+â”‚  â””â”€tokenizer.py   				#å½¢æ…‹ç´ è§£æç”¨  
+â”‚  â””â”€train.py       				#å­¦ç¿’ç”¨  
+â”œâ”€vocab      					# bertèªéŒ²è¾æ›¸vocab.txtã€€ã€€ã€€ã€€ã€€ã€€ã€€ â€¦ â€»1  
+â””â”€weights    					# bert_config.jsonã€pytorch_model.bin â€¦ â€»1  
+â””â”€Twitterå­¦ç¿’ãƒ‡ãƒ¼ã‚¿ã®ä½œæˆ.ipynb   		#tsvãƒ‡ãƒ¼ã‚¿ä½œæˆ  
+â””â”€Twitterãƒã‚¬ãƒã‚¸ãƒ¢ãƒ‡ãƒ«ä½œæˆãƒ»é©ç”¨.ipynb   	#ãƒ‡ãƒ¼ã‚¿ãƒ­ãƒ¼ãƒ€ä½œæˆ~å­¦ç¿’~æ¨è«–  
+  
+â€»1ï¼šä¸‹è¨˜HPã‹ã‚‰ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¦é…ç½®  
+     https://alaginrc.nict.go.jp/nict-bert/index.html  
+     NICT_BERT-base_JapaneseWikipedia_32K_BPE.zipã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰  
