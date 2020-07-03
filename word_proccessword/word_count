@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[4]:
+
+
+#文書を渡すとjanomeで処理してリストで返す関数
+from janome.tokenizer import Tokenizer
+from janome.analyzer import Analyzer
+from janome.charfilter import *
+from janome.tokenfilter import *
+import pathlib
+import pandas as pd 
+
+def before_filter(before_st):
+    #Unicode正規化・半角記号除去・全角記号除去・＜＞タグ除去・改行除去
+    char_filters = [UnicodeNormalizeCharFilter('NFKC'),
+                    RegexReplaceCharFilter('[!/:%#\$&\?\(\)~\.=\+\-…]+', ''),
+                    RegexReplaceCharFilter('[『！”＃＄％＆’（）＝～｜‘｛＋＊｝＜＞？＿－＾￥＠「；：」、。・]', ''),
+                    RegexReplaceCharFilter('<.*?>', ''), 
+                    RegexReplaceCharFilter('[\n|\r|\t]', '')
+                   ]
+    #名詞だけ取得・アルファベット小文字化・基本形
+    token_filters = [POSKeepFilter(['名詞']),
+                     LowerCaseFilter(),
+                     ExtractAttributeFilter('base_form')]
+    #設定からフィルターを作る
+    a = Analyzer(char_filters=char_filters, token_filters=token_filters)
+    #文章をanalyzerに掛け処理する
+    after_st = a.analyze(before_st)
+    
+    #ストップワードを除去する
+    stop_words = []
+    path = 'Japanese.txt'
+    with open(path, encoding="utf-8_sig") as f:
+        stop_words = f.read().split('\n')
+
+    after_st = [x for x in after_st if x not in stop_words]
+
+    return after_st
+
+
+# In[5]:
+
+
+import pathlib
+import pandas as pd 
+import numpy as np
+
+#CSVを読み込む
+path = "" #ファイルを直下に置いてない場合はパスを入れる
+filetest = 'paypaytest.csv'
+#filetest = 'paypay_2020-06-10.csv'
+
+#pandasでCSVファイルを開き、3列目のツイート内容だけdfに取得する
+df = pd.read_csv(filetest, usecols=[2])
+
+
+#単語のカウント表を作る
+#dicScore = {} 
+dfCount = pd.DataFrame(columns=['count'])
+
+#ツイート本文を形態素解析し、名詞・動詞・形容詞だけ抽出したリストを作成する
+for row in df['ツイート']:
+    word_list = before_filter(row)
+    for word in word_list:
+        #リストを頻出単度をカウントする辞書に追加する、辞書になければ追加する
+        if not any(dfCount.index == word): 
+            dfCount.loc[word] = 1
+        else:
+            dfCount.at[word, 'count'] += 1
+
+#得点表を降順ソート
+count_sorted = dfCount.sort_values('count', ascending=False)
+
+#得点表を表示
+print(count_sorted)
+
